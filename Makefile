@@ -6,3 +6,6 @@ deps:
 
 lint:
 	flake8 hello_world_test
+
+test:
+	PYTHONPATH=. py.test  --verbose -s
