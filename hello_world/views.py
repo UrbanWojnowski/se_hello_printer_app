@@ -12,14 +12,11 @@ def index():
     output = request.args.get('output')
     if not output:
         output = PLAIN
+
     name = request.args.get('name')
-    if not output:
-        output = PLAIN
-    elif not name:
-        name = PLAIN
     if not name:
         name = moje_imie
-    return get_formatted(msg, moje_imie,
+    return get_formatted(msg, name,
                          output.lower())
 
 
