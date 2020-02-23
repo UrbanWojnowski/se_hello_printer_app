@@ -1,11 +1,11 @@
 import xml.etree.cElementTree as ET
 
+greetings = ET.Element("greetings")
 
-root = ET.Element("root")
-doc = ET.SubElement(root, "doc")
+name = ET.SubElement(greetings, "name")
+name.text = 'Wojtek'
+msg = ET.SubElement(greetings, "msg")
+msg.text = 'Hello World'
 
-ET.SubElement(doc, "field1", name="blah").text = "some value1"
-ET.SubElement(doc, "field2", name="asdfasd").text = "some vlaue2"
-
-s = ET.tostring(root)
+s = ET.tostring(greetings)
 print(s)
